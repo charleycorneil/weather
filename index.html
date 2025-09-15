@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Title</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="brand">WeatherNow<span class="dot">.</span></h1>
+      <nav class="nav">
+        <a href="#today">Today</a>
+        <a href="#forecast">Forecast</a>
+        <a href="#hourly">Hourly</a>
+        <a href="#about">About</a>
+        <div class="auth">
+          <button class="btn ghost" type="button">Login</button>
+          <button class="btn solid" type="button">Sign Up</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="search-card" aria-labelledby="searchTitle">
+      <h2 id="searchTitle" class="sr-only">Search</h2>
+      <form id="searchForm" class="search-grid">
+        <div class="field">
+          <label for="location">City or ZIP</label>
+          <input id="location" name="location" type="text"
+                 placeholder="e.g., Indianapolis or 46202" required />
+        </div>
+
+        <div class="field">
+          <label for="days">Days (1–3)</label>
+          <select id="days" name="days">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3" selected>3</option>
+          </select>
+        </div>
+
+        <div class="actions">
+          <button id="go" class="btn primary" type="submit">Get Weather</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="today" class="block" aria-labelledby="todayTitle">
+      <h2 id="todayTitle">Current Conditions</h2>
+      <div id="current" class="panel"></div>
+    </section>
+
+    <section id="forecast" class="block" aria-labelledby="forecastTitle">
+      <h2 id="forecastTitle">Forecast</h2>
+      <div id="forecastGrid" class="grid"></div>
+    </section>
+
+    <section id="hourly" class="block" aria-labelledby="hourlyTitle">
+      <h2 id="hourlyTitle">Hourly (Today)</h2>
+      <div id="hourlyGrid" class="grid grid-hourly"></div>
+    </section>
+
+    <section id="about" class="block" aria-labelledby="aboutTitle">
+      <h2 id="aboutTitle">About</h2>
+      <p>This demo retrieves JSON from WeatherAPI and displays current conditions,
+      a multi-day forecast, and today’s hourly breakdown. Built for N423. Styled with Sass.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>Data from <a href="https://www.weatherapi.com" target="_blank" rel="noopener">WeatherAPI.com</a></small>
+    </div>
+  </footer>
+
+    <script src="lib/jquery-3.7.1.min.js"></script>
+    <script type="module" src="model/model.js"></script>
+    <script type="module" src="app/app.js"></script>
+  </body>
+</html>
